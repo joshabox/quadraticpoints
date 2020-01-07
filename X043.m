@@ -72,7 +72,7 @@ divs:=[D1,Dtor];
 genusC:=Genus(C);
 auts:=[al[1]];
 load "quadptssieve.m";
-MWSieve(deg2,[7]); //Returns boolean true if we have indeed found all exc degree 2 pts.
+MWSieve(deg2,[7,5,11]); //Returns boolean true if we have indeed found all exc degree 2 pts.
 
 //Do they have CM?
 assert &and[not HasComplexMultiplication(EllipticCurveFromjInvariant(j(RepresentativePoint(QQ)))) : QQ in excpts]; //No.
