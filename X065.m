@@ -33,7 +33,7 @@ assert &and[isomm(A.i) eq B.i : i in [1,2]]; //So A = Z/2Z x Z/84Z with A.1, A.2
 Z3:=FreeAbelianGroup(3);
 hh:=hom<Z3-> A | redDtors>;
 assert hh(-9*Z3.1+2*Z3.2) eq A.1;
-assert hh(17*Z3.1+13*Z3.2) in [k*A.2 : k in [1..83] | GCD(k,84) eq 1]; //This shows that the generators of J_X(\Q)_{tors} are as claimed.
+assert Order(hh(17*Z3.1+13*Z3.2)) eq 84 and not 42*hh(17*Z3.1+13*Z3.2) eq hh(-9*Z3.1+2*Z3.2); //This shows that the generators of J_X(\Q)_{tors} are as claimed.
 
 
 //We now compute C and J(C)(\Q)
