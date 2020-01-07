@@ -259,14 +259,14 @@ divlist:=[[]: i in [1..#divs]]; // divlist[i] is a list of the divisors reduce(X
 for p in primes do
 p;
 Fp:=GF(p);
-Xp:=ChangeRing(X,Fp);
-CGp,phi,psi:=ClassGroup(Xp);
+Xpp:=ChangeRing(X,Fp);
+CGp,phi,psi:=ClassGroup(Xpp);
 Z:=FreeAbelianGroup(1);
 degr:=hom<CGp->Z | [ Degree(phi(a))*Z.1 : a in OrderedGenerators(CGp)]>;
 JFp:=Kernel(degr); // This is isomorphic to J_X(\F_p).
 Append(~jacs,JFp); 
 for i in [1..#divs] do
-Dip:=JFp!psi(reduce(X,Xp,divs[i])); 
+Dip:=JFp!psi(reduce(X,Xpp,divs[i])); 
 Dipseq:=Eltseq(Dip);
 Dipseq:=Dipseq cat [0*i : i in [1..(100-#Dipseq)]]; //We convert divisors into a sequence of length 100 in order to save them in a list
 Append(~divlist[i],Dipseq);
