@@ -85,7 +85,7 @@ A:=AbelianGroup([0,0,11]);
 divs:=[D1,D2,Dtor];
 genusC:=Genus(C);
 auts:=[al[1]];
-primes:=[59,53,31,29,13,19];
+primes:=[73,59,53,31,19,5];
 assert &and[not IsSingular(ChangeRing(X,GF(p))): p in primes];
 assert &and[not IsSingular(ChangeRing(C,GF(p))): p in primes]; //All primes are of good reduction
 load "quadptssieve.m";
