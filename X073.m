@@ -84,7 +84,7 @@ assert Seqset(deg2) eq Seqset(deg2pb cat deg2npb); //Sanity check.
 
 
 //Finally, we do the sieve.
-primes:=[43,37,17,41,31,13];
+primes:=[43,67,41,17,37,13];
 assert &and[not IsSingular(ChangeRing(X,GF(p))) : p in primes]; //Sanity check to verify that X has good reduction at primes we sieve with.
 assert &and[not IsSingular(ChangeRing(C,GF(p))) : p in primes]; //Same for C.
 A:=AbelianGroup([0,0,6]);
