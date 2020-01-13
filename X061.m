@@ -58,6 +58,7 @@ A:=AbelianGroup([0,5]);
 divs:=[D1,Dtor];
 genusC:=Genus(C);
 auts:=[al[1]];
+I:=2;
 load "quadptssieve.m";
 MWSieve(deg2,[7]); //Returns boolean true if we have indeed found all exc degree 2 pts.
 
