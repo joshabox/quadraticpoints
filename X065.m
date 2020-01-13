@@ -74,6 +74,7 @@ A:=AbelianGroup([0,2,84]);
 divs:=[D1,-9*Dtors[1]+2*Dtors[2],17*Dtors[1]+13*Dtors[2]];
 genusC:=Genus(C);
 auts:=[al[3]];
+I:=2;
 load "quadptssieve.m";
 MWSieve(deg2,[17,23]); //Returns boolean true if we have indeed found all exc degree 2 pts.
 
