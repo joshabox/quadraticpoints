@@ -120,6 +120,7 @@ divs:=[D1,Dtors[1],Dtors[2]];
 genusC:=Genus(C);
 bp:=2*Place(cusps[1]);
 auts:=[al[1],al[2]];
+I:=4;
 load "quadptssieve.m";
 MWSieve(deg2,[11,13]); //Returns boolean true if we have indeed found all exc degree 2 pts.
 
