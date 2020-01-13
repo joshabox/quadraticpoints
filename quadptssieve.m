@@ -11,8 +11,6 @@ an abstract abelian group A isomorphic to J(X)(\Q) such that A.i corresponds to 
 and a number genusC that is the genus of C; if #Gamma=2 also a degree 2 divisor
 bp on X that is the pullback of a rational point on C, to be used to embed X^{(2)} in J. */
 
-I:=2; //In all our cases except for N=57, we have #Gamma = 2. For N=57, we have Gamma \simeq Z/2Z x Z/2Z.
-
 //This function computes the discriminant of the field a place is defined over.
 discQuadPlace:=function(P);
         assert Degree(P) eq 2;
