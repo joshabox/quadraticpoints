@@ -81,12 +81,13 @@ tf,cm:=HasComplexMultiplication(EllipticCurveFromjInvariant(j(P0)));
 assert cm eq -43;
 
 //We check that the corresponding elliptic curves have a conductor different from their conjugate, hence are not \Q-curves.
-c131:=hom<K131->K131 | [-s]>;
-c71:=hom<K71->K71 | [-t]>;
-assert not Conductor(EllipticCurveFromjInvariant(j(P1))) eq Conductor(EllipticCurveFromjInvariant(c131(j(P1))));
-assert not Conductor(EllipticCurveFromjInvariant(j(P2))) eq Conductor(EllipticCurveFromjInvariant(c131(j(P2))));
-assert not Conductor(EllipticCurveFromjInvariant(j(P3))) eq Conductor(EllipticCurveFromjInvariant(c71(j(P3))));
-assert not Conductor(EllipticCurveFromjInvariant(j(P4))) eq Conductor(EllipticCurveFromjInvariant(c71(j(P4))));
-
+Ps:=<P1,P2,P3,P4>;
+cs:=<c131,c131,c71,c71>;
+for i in [1..4] do
+  Pi:=Ps[i];
+  ci:=cs[i];
+  Ei:=EllipticCurveFromjInvariant(j(Pi));
+  assert not Conductor(EllipticCurve([ci(a) : a in aInvariants(Ei)])) eq Conductor(Ei);
+end for;
 
 
