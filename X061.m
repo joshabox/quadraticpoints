@@ -61,7 +61,7 @@ auts:=[al[1]];
 I:=2;
 load "quadptssieve.m";
 
-MWSieve(deg2,[7],X,A,divs,auts,genusC,deg2pb,deg2npb,I,bp)); //Returns true if we have found all deg 2 points.
+MWSieve(deg2,[7],X,A,divs,auts,genusC,deg2pb,deg2npb,I,bp); //Returns true if we have found all deg 2 points.
 
 
 
