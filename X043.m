@@ -73,7 +73,7 @@ genusC:=Genus(C);
 auts:=[al[1]];
 I:=2;
 load "quadptssieve.m";
-MWSieve(deg2,[7,5,11]); //Returns boolean true if we have indeed found all exc degree 2 pts.
+MWSieve(deg2,[7,5,11],X,A,divs,auts,genusC,deg2pb,deg2npb,I,bp); //Returns boolean true if we have indeed found all exc degree 2 pts.
 
 //Do they have CM?
 assert &and[not HasComplexMultiplication(EllipticCurveFromjInvariant(j(RepresentativePoint(QQ)))) : QQ in excpts]; //No.
@@ -82,6 +82,8 @@ assert cm eq -43;
 
 //We check that the corresponding elliptic curves have a conductor different from their conjugate, hence are not \Q-curves.
 Ps:=<P1,P2,P3,P4>;
+c131:=hom<K131->K131 | [-s]>;
+c71:=hom<K71->K71 | [-t]>;
 cs:=<c131,c131,c71,c71>;
 for i in [1..4] do
   Pi:=Ps[i];
