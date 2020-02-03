@@ -90,7 +90,8 @@ primes:=[73,59,53,31,19,5];
 assert &and[not IsSingular(ChangeRing(X,GF(p))): p in primes];
 assert &and[not IsSingular(ChangeRing(C,GF(p))): p in primes]; //All primes are of good reduction
 load "quadptssieve.m";
-MWSieve(deg2,primes); //Returns boolean true if we have indeed found all exc degree 2 pts.
+
+MWSieve(deg2,primes,X,A,divs,auts,genusC,deg2pb,deg2npb,I,bp)); //Returns true if we have found all deg 2 points.
 
 
 //We compute j-invariant and CM. Note that we already know that all are Q-curves.
