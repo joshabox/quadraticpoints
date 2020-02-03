@@ -93,7 +93,8 @@ genusC:=Genus(C);
 auts:=[al[1]];
 I:=2;
 load "quadptssieve.m";
-MWSieve(deg2,primes); //Returns boolean true if we have indeed found all exc degree 2 pts.
+
+MWSieve(deg2,primes,X,A,divs,auts,genusC,deg2pb,deg2npb,I,bp); //Returns true if we have indeed found all deg 2 pts.
 
 //And we verify j-invariants, CM, Q-curve in the table.
 c31:=hom<Km31 -> Km31 | [-rtm31]>;
