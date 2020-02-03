@@ -76,7 +76,9 @@ genusC:=Genus(C);
 auts:=[al[3]];
 I:=2;
 load "quadptssieve.m";
-MWSieve(deg2,[17,23]); //Returns boolean true if we have indeed found all exc degree 2 pts.
+
+MWSieve(deg2,[17,23],X,A,divs,auts,genusC,deg2pb,deg2npb,I,bp); //Returns true if we have found all deg 2 points.
+
 
 
 
