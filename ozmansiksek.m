@@ -266,10 +266,10 @@ reduce:=function(X,Xp,D);
 		decomp:=Decomposition(D);
 		return &+[ pr[2]*$$(X,Xp,pr[1]) : pr in decomp]; // Reduce the problem to reducing places.
 	end if;
-	assert Type(D) eq PlcCrvElt;
-	if  Degree(D) eq 1 then
+	R<[x]>:=CoordinateRing(AmbientSpace(X));
+        assert Type(D) eq PlcCrvElt;
+        if  (Degree(D) eq 1) and (#{Degree(xx) : xx in x} eq 1) then
 		P:=D;
-		R<[x]>:=CoordinateRing(AmbientSpace(X));
 		m:=Rank(R);
 		KX:=FunctionField(X);
 		inds:=[i : i in [1..m] | &and[Valuation(KX!(x[j]/x[i]),P) ge 0 : j in [1..m]]];	
